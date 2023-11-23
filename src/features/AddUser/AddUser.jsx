@@ -1,4 +1,4 @@
-// AddUser.js
+
 import React, { useState } from 'react';
 import "./AddUser.css";
 
