@@ -1,8 +1,9 @@
-// App.js
+
 import React from 'react';
 import './App.css';
 import AddUser from './features/AddUser/AddUser'
-
+import WeekDays from './features/WeekDays/WeekDays'
+import Subjects from './features/Subjects/Subjects';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <div className="left">
       <h1>School Journal</h1>
         <AddUser />
+        <WeekDays/>
+        <Subjects/>
       </div>
     </div>
   );
