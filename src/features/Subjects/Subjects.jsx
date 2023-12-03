@@ -13,7 +13,7 @@
 import React from 'react';
 
 function Subjects({ onSelectSubject }) {
-  const subjects = ['ინგლისური ისტორია', 'მათემატიკა'];
+  const subjects = ['ინგლისური', 'ისტორია', 'მათემატიკა'];
 
   return (
     <div>
@@ -30,3 +30,5 @@ function Subjects({ onSelectSubject }) {
 }
 
 export default Subjects;
+
+

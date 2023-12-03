@@ -49,12 +49,31 @@ import Subjects from './features/Subjects/Subjects';
 
 function App() {
   const [selectedSubject, setSelectedSubject] = useState(null);
+  const [students, setStudents] = useState([]);
+  const [grades, setGrades] = useState({});
+
+  const handleAddUser = (student) => {
+    setStudents((prevStudents) => [...prevStudents, student]);
+  };
+
+  const handleAddGrade = (student, subject, day, grade) => {
+    setGrades((prevGrades) => ({
+      ...prevGrades,
+      [student]: {
+        ...prevGrades[student],
+        [subject]: {
+          ...prevGrades[student]?.[subject],
+          [day]: grade,
+        },
+      },
+    }));
+  };
 
   return (
     <div className="task-management">
       <div className="left">
         <h1>School Journal</h1>
-        <AddUser />
+        <AddUser onAddUser={handleAddUser} />
         <div className="subjects">
           <Subjects onSelectSubject={(subject) => setSelectedSubject(subject)} />
         </div>
@@ -62,7 +81,12 @@ function App() {
       <div className="right">
         {selectedSubject && (
           <div className="week-days">
-            <WeekDays subject={selectedSubject} />
+            <WeekDays
+              subject={selectedSubject}
+              grades={grades}
+              students={students}
+              handleAddGrade={handleAddGrade}
+            />
           </div>
         )}
       </div>
@@ -72,4 +96,4 @@ function App() {
 
 export default App;
 
-// ...
+

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import "./AddUser.css";
 
@@ -28,4 +27,6 @@ function AddUser() {
   );
 }
 
-export default AddUser;
+export default AddUser
+
+
